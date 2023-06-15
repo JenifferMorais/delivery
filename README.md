@@ -9,6 +9,7 @@ Para executar esse projeto, o primeiro passo é criar uma pasta chamada "test" n
 Após, abra a conexão (no meu caso utilizei o dbeaver), com as seguintes informações:
 Path: C:\\test\\DATABASEFDB.FDB
 Username: SYSDBA
+
 Password: masterkey
 
 Com a conexão criada, rode os scripts que estão no arquivo script do projeto.
