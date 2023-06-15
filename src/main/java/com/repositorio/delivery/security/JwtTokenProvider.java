@@ -1,5 +1,6 @@
 package com.repositorio.delivery.security;
 
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
@@ -17,8 +18,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
-import com.repositorio.delivery.entity.AppUserRole;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
@@ -47,11 +46,10 @@ public class JwtTokenProvider {
 		secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
 	}
 
-	public String createToken(String username, List<AppUserRole> appUserRoles) {
+	public String createToken(String username) {
 
 		Claims claims = Jwts.claims().setSubject(username);
-		claims.put("auth", appUserRoles.stream().map(s -> new SimpleGrantedAuthority(s.getAuthority()))
-				.filter(Objects::nonNull).collect(Collectors.toList()));
+		claims.put("auth", new ArrayList<>());
 
 		Date now = new Date();
 		Date validity = new Date(now.getTime() + validityInMilliseconds);

@@ -2,6 +2,8 @@ package com.repositorio.delivery.security;
 
 import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -29,7 +31,7 @@ public class MyUserDetails implements UserDetailsService {
     return org.springframework.security.core.userdetails.User//
         .withUsername(username)//
         .password(appUser.getPassword())//
-        .authorities(appUser.getAppUserRoles())//
+        .authorities(new ArrayList<>())//
         .accountExpired(false)//
         .accountLocked(false)//
         .credentialsExpired(false)//

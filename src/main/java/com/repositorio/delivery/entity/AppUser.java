@@ -10,12 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
 @Table(name = "USERS")
 public class AppUser {
 
@@ -30,11 +30,6 @@ public class AppUser {
 	@Column(name = "PASSWORD", nullable = false)
 	private String password;
 
-	public AppUser() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	public AppUser(Integer id, String username, String password) {
 		super();
 		this.id = id;
@@ -46,8 +41,5 @@ public class AppUser {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
 	}
-
-	@ElementCollection
-	private List<AppUserRole> appUserRoles;
 
 }
