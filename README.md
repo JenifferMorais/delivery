@@ -1,3 +1,6 @@
+# Sobre 
+Para esse projeto foi utilizado Maven, Spring Boot, Spring Framework, JWT, Spring Security, Swagger, DTO Java, Lombok, Firebird e API REST
+
 # Como executar o projeto delivery
 
 Para executar esse projeto, o primeiro passo é criar uma pasta chamada "test" no disco local (C:) e instalar o firebird. Dentro da pasta do firebird, abra o terminal e execute os seguintes passos:
